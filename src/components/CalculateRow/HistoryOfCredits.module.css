@@ -1,0 +1,13 @@
+.historyBlock {
+  padding: 10px;
+  margin: 10px 10px 10px 0px;
+  border: 2px solid rgb(182, 226, 255);
+  border-radius: 5px;
+  background-color: rgb(243, 254, 255);
+}
+
+.history {
+  width: 350px;
+  height: 300px;
+  overflow: auto;
+}
