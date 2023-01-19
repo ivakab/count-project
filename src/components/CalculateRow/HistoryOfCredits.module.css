@@ -1,13 +1,68 @@
 .historyBlock {
+  height: 125px;
   padding: 10px;
-  margin: 10px 10px 10px 0px;
-  border: 2px solid rgb(182, 226, 255);
-  border-radius: 5px;
+  margin: 0px 10px 10px 0px;
+  border: 3px solid rgba(202, 241, 255, 0.85);
+  border-radius: 11px;
   background-color: rgb(243, 254, 255);
 }
 
 .history {
-  width: 350px;
-  height: 300px;
+  margin-top: 20px;
+  padding: 10px;
+  width: 330px;
+  height: 330px;
+  border: 3px solid rgb(205, 234, 255);
+  border-radius: 5px;
   overflow: auto;
+  transition-property: all;
+  transition-duration: 0.8s;
+}
+
+.history::-webkit-scrollbar {
+  width: 6px; /* ширина для вертикального скролла */
+  background-color: rgb(205, 234, 255);
+}
+
+.history::-webkit-scrollbar-thumb {
+  background-color: rgb(143, 208, 255);
+  border-radius: 50px;
+  box-shadow: inset 1px 1px 10px #bce0ff;
+}
+.history::-webkit-scrollbar-thumb:hover {
+  background-color: #73bbff;
+}
+
+.history:hover {
+  height: 390px;
+  width: 390px;
+  box-shadow: 6px 6px 6px rgba(0, 0, 0, 0.35);
+}
+
+.btn {
+  margin-top: 10px;
+  width: 100px;
+  height: 35px;
+  box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.25);
+  border-radius: 20px;
+  border: none;
+  background-color: rgb(215, 252, 255);
+}
+
+.btn:hover {
+  box-shadow: 6px 6px 6px rgba(0, 0, 0, 0.35);
+  background-color: rgb(200, 255, 250);
+  cursor: pointer;
+  transition: 0.4s;
+}
+
+.btn:active {
+  box-shadow: 6px 6px 6px rgba(0, 0, 0, 0.35);
+  background-color: rgb(176, 255, 250);
+}
+
+.deleteBtn {
+  width: 100px;
+  height: 35px;
+  border-radius: 20px;
 }

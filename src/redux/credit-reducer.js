@@ -9,9 +9,9 @@ const DELETE_CALCULATION_FROM_HISTORY = "DELETE_CALCULATION_FROM_HISTORY";
 
 let initialState = {
   credit: {
-    amount: null,
-    interest_rate: null,
-    number_of_years: null,
+    amount: 0,
+    interest_rate: 0,
+    number_of_years: 0,
     loanAmount: 0,
     loanOverpayment: 0,
     mounthlyPayment: 0,

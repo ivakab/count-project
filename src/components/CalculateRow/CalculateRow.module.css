@@ -14,25 +14,81 @@
 }
 
 .inputValue {
-  width: 170px;
+  width: 210px;
+  height: 40px;
+  border-radius: 18px;
+  padding: 3px;
+  border-style: solid;
+  border-color: rgb(205, 234, 255);
+  border-width: 3px;
+  transition: 0.4s;
+}
+
+.inputValue:hover {
+  box-shadow: 6px 6px 6px rgba(0, 0, 0, 0.35);
+  background-color: rgb(249, 253, 253);
+  width: 230px;
+}
+
+.inputValue:hover::placeholder {
+  color: rgb(198, 198, 198);
+}
+
+.inputValue:focus::placeholder {
+  color: rgb(198, 198, 198, 0.49);
+}
+
+.inputValue:focus {
+  width: 230px;
+  outline: none;
+  border-color: rgb(177, 222, 255);
+  box-shadow: 6px 6px 6px rgba(0, 0, 0, 0.35);
+  background-color: rgb(243, 252, 255);
 }
 
 .btn {
   margin-top: 10px;
+  width: 100px;
+  height: 35px;
   box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.25);
+  border-radius: 20px;
+  border: none;
+  background-color: rgb(215, 252, 255);
 }
 
 .btn:hover {
   box-shadow: 6px 6px 6px rgba(0, 0, 0, 0.35);
+  background-color: rgb(200, 255, 250);
+  cursor: pointer;
+  transition: 0.4s;
+}
+
+.btn:active {
+  box-shadow: 6px 6px 6px rgba(0, 0, 0, 0.35);
+  background-color: rgb(176, 255, 250);
 }
 
 .btnHistory {
-  box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.25);
+  width: 200px;
+  height: 35px;
+  margin-right: 20px;
   margin-left: 10px;
+  box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.25);
+  border-radius: 20px;
+  border: none;
+  background-color: rgb(215, 252, 255);
 }
 
 .btnHistory:hover {
   box-shadow: 6px 6px 6px rgba(0, 0, 0, 0.35);
+  background-color: rgb(200, 255, 250);
+  cursor: pointer;
+  transition: 0.4s;
+}
+
+.btnHistory:active {
+  box-shadow: 6px 6px 6px rgba(0, 0, 0, 0.35);
+  background-color: rgb(176, 255, 250);
 }
 
 .result {

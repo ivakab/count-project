@@ -1,0 +1,9 @@
+.area {
+  height: 30px;
+}
+
+.area:hover {
+  color: rgb(71, 116, 120);
+  font-weight: bold;
+  cursor: pointer;
+}

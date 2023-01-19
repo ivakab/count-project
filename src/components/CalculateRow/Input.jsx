@@ -7,6 +7,7 @@ const Input = (props) => {
       <input
         className={styles.inputValue}
         type="number"
+        min="0"
         value={props.value || ""}
         onChange={(e) => props.setValue(e.target.value)}
         placeholder={props.text}

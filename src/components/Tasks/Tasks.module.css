@@ -1,22 +1,28 @@
-.tasks {
-}
-
 .header {
   padding: 10px;
 }
 
-.choose {
-  padding: 10px;
-}
-
 .btn {
+  width: 100px;
+  height: 35px;
   margin-right: 20px;
-  padding: 10px;
+  margin-left: 10px;
   box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.25);
+  border-radius: 20px;
+  border: none;
+  background-color: rgb(215, 252, 255);
 }
 
 .btn:hover {
   box-shadow: 6px 6px 6px rgba(0, 0, 0, 0.35);
+  background-color: rgb(200, 255, 250);
+  cursor: pointer;
+  transition: 0.4s;
+}
+
+.btn:active {
+  box-shadow: 6px 6px 6px rgba(0, 0, 0, 0.35);
+  background-color: rgb(176, 255, 250);
 }
 
 .rate {
@@ -24,10 +30,33 @@
 }
 
 .btnRate {
+  width: 100px;
+  height: 35px;
   margin-right: 10px;
   box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.25);
+  border-radius: 20px;
+  border: none;
+  background-color: rgb(215, 252, 255);
 }
 
-.btn:hover {
+.btnRate:hover {
   box-shadow: 6px 6px 6px rgba(0, 0, 0, 0.35);
+  background-color: rgb(200, 255, 250);
+  cursor: pointer;
+  transition: 0.4s;
+}
+
+.btnRate:active {
+  box-shadow: 6px 6px 6px rgba(0, 0, 0, 0.35);
+  background-color: rgb(176, 255, 250);
+}
+
+.price {
+  padding: 8px;
+  margin-top: 25px;
+  width: 80px;
+  height: 50px;
+  border: 3px solid rgb(205, 234, 255, 0.85);
+  border-radius: 5px;
+  background-color: rgb(232, 253, 255);
 }

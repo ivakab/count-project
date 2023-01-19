@@ -21,6 +21,7 @@ const DepositContainer = () => {
   let depositResult = useSelector(
     (state) => state.depositReducer.deposit.result
   );
+  const history = useSelector((state) => state.depositReducer.history);
 
   const dispatch = useDispatch();
 
@@ -52,6 +53,7 @@ const DepositContainer = () => {
       rate={rate}
       years={years}
       result={depositResult}
+      history={[{ amount: 3000 }, { amount: 50000 }]}
     />
   );
 };

@@ -47,8 +47,12 @@ const CreditContainer = () => {
     let mounthly_percent = rate / 12 / 100;
     let numbers_of_mounth = years * 12;
     let degree = Math.pow(1 + mounthly_percent, numbers_of_mounth);
-    if (mounthly_percent === 0) {
+    if (!mounthly_percent && numbers_of_mounth) {
       dispatch(setMonthlyPayment(amount / numbers_of_mounth));
+      dispatch(setCreditResult(amount));
+      dispatch(setLoanOverpayment(0));
+    } else if (!numbers_of_mounth) {
+      dispatch(setMonthlyPayment(amount));
       dispatch(setCreditResult(amount));
       dispatch(setLoanOverpayment(0));
     } else {

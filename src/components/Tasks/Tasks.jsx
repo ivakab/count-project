@@ -3,21 +3,14 @@ import CreditContainer from "../Credit/CreditContainer";
 import DepositContainer from "../Deposit/DepositContainer";
 import styles from "./Tasks.module.css";
 import { PriceApi } from "../api/PriceApi.js";
+import { Routes, Route, Link } from "react-router-dom";
+import { Navigation } from "./Navigation";
+import RateBTC from "./RateBTC";
 
 const Tasks = () => {
-  const [taskMode, setTaskMode] = useState(true);
-
   const [price, setPrice] = useState(null);
 
   const [show, showPrice] = useState(false);
-
-  const showCreditMode = useCallback(() => {
-    setTaskMode(true);
-  }, []);
-
-  const showDepositMode = useCallback(() => {
-    setTaskMode(false);
-  }, []);
 
   const setShowPrice = useCallback(() => {
     showPrice(!show);
@@ -33,23 +26,19 @@ const Tasks = () => {
   return (
     <div className={styles.tasks}>
       <div className={styles.header}> Tasks:</div>
-      <div className={styles.choose}>
-        <button className={styles.btn} onClick={showCreditMode}>
-          Calculate interest on a loan
-        </button>
-        <button className={styles.btn} onClick={showDepositMode}>
-          Calculate interest on deposit
-        </button>
-      </div>
       <div className={styles.taskMode}>
-        {taskMode && <CreditContainer />}
-        {!taskMode && <DepositContainer />}
+        <Routes>
+          <Route path="/" element={<Navigation />} className={styles.links}>
+            <Route index element={<CreditContainer />} />
+            <Route path="deposit" element={<DepositContainer />} />
+          </Route>
+        </Routes>
       </div>
       <div className={styles.rate}>
         <button className={styles.btnRate} onClick={setShowPrice}>
           See the rate
         </button>
-        {show && price}
+        {show && <RateBTC price={price} />}
       </div>
     </div>
   );

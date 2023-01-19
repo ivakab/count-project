@@ -1,7 +1,9 @@
-import React from "react";
+import React, { useState } from "react";
 import { useDispatch } from "react-redux";
 import { deleteCalculationFromHistory } from "../../redux/credit-reducer";
+import Modal from "../Modal/Modal";
 import styles from "./HistoryOfCredits.module.css";
+import HistoryOfCreditsBlock from "./HistoryOfCreditsBlock";
 
 const HistoryOfCredits = (props) => {
   const dispatch = useDispatch();
@@ -9,24 +11,13 @@ const HistoryOfCredits = (props) => {
   const deleteCredit = (index) => {
     dispatch(deleteCalculationFromHistory(index));
   };
+
+  const [setModal, setShowModal] = useState(false);
+
   return (
     <div className={styles.history}>
-      {props.history.map((h, index) => {
-        return (
-          <div
-            key={index}
-            className={styles.historyBlock}
-            onClick={() => deleteCredit(index)}
-          >
-            <div>{index + 1} credit</div>
-            <div> Amount: {h.amount}</div>
-            <div> Rate: {h.interest_rate}</div>
-            <div> Years: {h.number_of_years}</div>
-            <div> Monthly payment: {h.mounthlyPayment}</div>
-            <div> Loan Amount: {h.loanAmount}</div>
-            <div>Loan Overpayment: {h.loanOverpayment}</div>
-          </div>
-        );
+      {props.history.map((element, index) => {
+        return <HistoryOfCreditsBlock element={element} index={index} />;
       })}
     </div>
   );
