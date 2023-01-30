@@ -7,6 +7,7 @@ import {
   setNumberOfDepositYears,
 } from "../../redux/deposit-reducer";
 import CalculateRow from "../CalculateRow/CalculateRow";
+import Deposit from "./Deposit";
 
 const DepositContainer = () => {
   const amount = useSelector(
@@ -39,22 +40,27 @@ const DepositContainer = () => {
 
   const countDeposit = () => {
     //a=p*(1+r/100)^t
-    let result = amount * Math.pow(1 + rate / 100, years);
+    // let result = amount * Math.pow(1 + rate / 100, years);
+    let result =
+      amount * (Math.pow(1 + rate / 100, years) - 1) * (1 / (rate / 100)) +
+      amount * Math.pow(1 + rate / 100, years);
     dispatch(setDepositResult(result.toFixed(2)));
   };
 
   return (
-    <CalculateRow
-      setAmount={setAmount}
-      setRate={setRate}
-      setYears={setYears}
-      countDeposit={countDeposit}
-      amount={amount}
-      rate={rate}
-      years={years}
-      result={depositResult}
-      history={[{ amount: 3000 }, { amount: 50000 }]}
-    />
+    <div>
+      <CalculateRow
+        setAmount={setAmount}
+        setRate={setRate}
+        setYears={setYears}
+        countResult={countDeposit}
+        amount={amount}
+        rate={rate}
+        years={years}
+        history={[{ amount: 3000 }, { amount: 50000 }]}
+      />
+      <Deposit result={depositResult} />
+    </div>
   );
 };
 

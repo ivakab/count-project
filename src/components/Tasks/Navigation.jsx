@@ -8,11 +8,11 @@ const Navigation = () => {
 
   return (
     <>
-      <header>
-        <NavLink to="/" className={styles.active}>
+      <header className={styles.header}>
+        <NavLink to="/">
           <button className={styles.btn}>Credit</button>
         </NavLink>
-        <NavLink to="/deposit" className={styles.active}>
+        <NavLink to="/deposit">
           <button className={styles.btn}> Deposit</button>
         </NavLink>
         <button onClick={goBack} className={styles.btn}>

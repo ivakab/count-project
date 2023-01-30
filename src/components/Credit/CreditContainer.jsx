@@ -11,6 +11,7 @@ import {
 } from "../../redux/credit-reducer";
 import CalculateRow from "../CalculateRow/CalculateRow";
 import Credit from "./Credit";
+import styles from "../CalculateRow/CalculateRow.module.css";
 
 const CreditContainer = () => {
   const amount = useSelector((state) => state.creditReducer.credit.amount);
@@ -79,7 +80,7 @@ const CreditContainer = () => {
   };
 
   return (
-    <div>
+    <div className={styles.allCredit}>
       <CalculateRow
         setAmount={setLoanAmount}
         setRate={setRate}

@@ -12,14 +12,12 @@ const HistoryOfCreditsBlock = (props) => {
     dispatch(deleteCalculationFromHistory(index));
   };
 
-  const [setModal, setShowModal] = useState(false);
-
   return (
     <div>
       <div
         key={props.index}
         className={styles.historyBlock}
-        onClick={() => setShowModal(true)}
+        onClick={props.onClick}
       >
         <div>{props.index + 1} credit</div>
         <div> Amount: {props.element.amount}</div>
@@ -35,9 +33,9 @@ const HistoryOfCreditsBlock = (props) => {
           Delete
         </button>
       </div>
-      <Modal active={setModal} setActive={setShowModal}>
-        {<ModalHistoryBlock {...props.element} />}
-      </Modal>
+      {/* <Modal active={setModal} setActive={setShowModal}>
+        {<ModalHistoryBlock element={props.element} index={props.index} />}
+      </Modal> */}
     </div>
   );
 };

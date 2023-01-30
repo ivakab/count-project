@@ -25,21 +25,20 @@ const Tasks = () => {
 
   return (
     <div className={styles.tasks}>
-      <div className={styles.header}> Tasks:</div>
       <div className={styles.taskMode}>
         <Routes>
-          <Route path="/" element={<Navigation />} className={styles.links}>
+          <Route path="/" element={<Navigation />}>
             <Route index element={<CreditContainer />} />
             <Route path="deposit" element={<DepositContainer />} />
           </Route>
         </Routes>
       </div>
-      <div className={styles.rate}>
+      <footer className={styles.rate}>
         <button className={styles.btnRate} onClick={setShowPrice}>
           See the rate
         </button>
         {show && <RateBTC price={price} />}
-      </div>
+      </footer>
     </div>
   );
 };

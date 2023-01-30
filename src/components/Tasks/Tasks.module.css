@@ -1,5 +1,18 @@
+.tasks {
+  width: 95%;
+  height: 580px;
+}
+
+.taskMode {
+  width: 95%;
+  height: 580px;
+}
+
 .header {
-  padding: 10px;
+  width: 500px;
+  padding-bottom: 10px;
+  display: flex;
+  justify-content: space-between;
 }
 
 .btn {

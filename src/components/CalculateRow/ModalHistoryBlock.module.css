@@ -7,3 +7,25 @@
   font-weight: bold;
   cursor: pointer;
 }
+
+.historyBtn {
+  margin: 10px;
+  width: 100px;
+  height: 35px;
+  box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.25);
+  border-radius: 20px;
+  border: none;
+  background-color: rgb(215, 252, 255);
+}
+
+.historyBtn:hover:not(.historyBtn:disabled) {
+  box-shadow: 6px 6px 6px rgba(0, 0, 0, 0.35);
+  background-color: rgb(200, 255, 250);
+  cursor: pointer;
+  transition: 0.4s;
+}
+
+.historyBtn:active:enabled {
+  box-shadow: 6px 6px 6px rgba(0, 0, 0, 0.35);
+  background-color: rgb(176, 255, 250);
+}

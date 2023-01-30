@@ -9,9 +9,10 @@
 
 .history {
   margin-top: 20px;
+  margin-left: 10px;
   padding: 10px;
   width: 330px;
-  height: 330px;
+  height: 322px;
   border: 3px solid rgb(205, 234, 255);
   border-radius: 5px;
   overflow: auto;
@@ -20,7 +21,7 @@
 }
 
 .history::-webkit-scrollbar {
-  width: 6px; /* ширина для вертикального скролла */
+  width: 6px;
   background-color: rgb(205, 234, 255);
 }
 
@@ -34,7 +35,7 @@
 }
 
 .history:hover {
-  height: 390px;
+  height: 350px;
   width: 390px;
   box-shadow: 6px 6px 6px rgba(0, 0, 0, 0.35);
 }

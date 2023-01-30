@@ -1,20 +1,36 @@
 import React from "react";
+import { useSelector } from "react-redux";
 import styles from "./ModalHistoryBlock.module.css";
 
 const ModalHistoryBlock = (props) => {
   return (
     <div>
-      <div className={styles.area}> Amount: {props.amount}</div>
-      <div className={styles.area}> Rate: {props.interest_rate}</div>
-      <div className={styles.area}> Years: {props.number_of_years}</div>
+      <div className={styles.area}> Amount: {props.element.amount}</div>
+      <div className={styles.area}> Rate: {props.element.interest_rate}</div>
+      <div className={styles.area}> Years: {props.element.number_of_years}</div>
       <div className={styles.area}>
-        Monthly payment: {props.mounthlyPayment}
+        Monthly payment: {props.element.mounthlyPayment}
       </div>
-      <div className={styles.area}>Loan Amount: {props.loanAmount}</div>
+      <div className={styles.area}>Loan Amount: {props.element.loanAmount}</div>
       <div className={styles.area}>
-        Loan Overpayment: {props.loanOverpayment}
+        Loan Overpayment: {props.element.loanOverpayment}
       </div>
-      {/* хочу при нажатии на конкретное поле переходить на страницу с формулой рассчета этого поля */}
+
+      <button
+        disabled={props.index === 0}
+        className={styles.historyBtn}
+        onClick={() => props.setSelectedID(props.index - 1)}
+      >
+        &lt;
+      </button>
+
+      <button
+        disabled={props.index === props.length - 1}
+        className={styles.historyBtn}
+        onClick={() => props.setSelectedID(props.index + 1)}
+      >
+        &gt;
+      </button>
     </div>
   );
 };
